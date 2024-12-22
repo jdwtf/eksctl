@@ -9,6 +9,8 @@ const (
 	PartitionUSGov = "aws-us-gov"
 	PartitionISO   = "aws-iso"
 	PartitionISOB  = "aws-iso-b"
+	PartitionISOF  = "aws-iso-f"
+	PartitionISOE  = "aws-iso-e"
 )
 
 // partition is an AWS partition.
@@ -75,6 +77,26 @@ var Partitions = partitions{
 		},
 		regions:                     []string{RegionUSISOBEast1},
 		endpointServiceDomainPrefix: "gov.sgov.sc2s",
+	},
+	{
+		name: PartitionISOF,
+		serviceMappings: map[string]string{
+			"EC2":            "ec2.csp.hci.ic.gov",
+			"EKS":            "eks.amazonaws.com",
+			"EKSFargatePods": "eks-fargate-pods.amazonaws.com",
+		},
+		regions:                     []string{RegionUSISOBEast1},
+		endpointServiceDomainPrefix: "gov.ic.hci.csp",
+	},
+	{
+		name: PartitionISOE,
+		serviceMappings: map[string]string{
+			"EC2":            "ec2.cloud.adc-e.uk",
+			"EKS":            "eks.amazonaws.com",
+			"EKSFargatePods": "eks-fargate-pods.amazonaws.com",
+		},
+		regions:                     []string{RegionUSISOBEast1},
+		endpointServiceDomainPrefix: "uk.adc-e.cloud",
 	},
 }
 
