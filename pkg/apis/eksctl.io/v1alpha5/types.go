@@ -819,7 +819,7 @@ func (r *RemoteNetworkConfig) ToRemoteNetworksPool() []string {
 }
 
 func (r *RemoteNetworkConfig) HasRemoteNodesEnabled() bool {
-	return r.RemoteNodeNetworks != nil && len(r.RemoteNodeNetworks) > 0
+	return len(r.RemoteNodeNetworks) > 0
 }
 
 func (c *ClusterConfig) HasRemoteNetworkingConfigured() bool {
